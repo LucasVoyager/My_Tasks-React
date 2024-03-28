@@ -4,11 +4,14 @@ export const Card = styled.div`
   background-color: #fcfcfc;
   box-shadow: 0px 4px 4px 0px #00000040;
   padding: 16px;
+  margin-bottom: 32px;
+  border-radius: 16px;
 `
 
 export const Title = styled.h3`
   font-size: 18px;
   font-weight: bold;
+  margin-bottom: 16px;
 `
 
 export const Tag = styled.span`
@@ -16,6 +19,10 @@ export const Tag = styled.span`
   color: #fff;
   font-size: 10;
   font-weight: bold;
+  background-color: #e1a32a;
+  border-radius: 8px;
+  margin-right: 16px;
+  display: inline-block;
 `
 
 export const Description = styled.textarea`
@@ -23,6 +30,13 @@ export const Description = styled.textarea`
   font-size: 14px;
   line-height: 24px;
   font-family: 'Roboto Mono', monospace;
+  display: block;
+  width: 100%;
+  margin-bottom: 16px;
+  margin-top: 16px;
+  resize: none;
+  border: none;
+  background-color: transparent;
 `
 
 export const ActionsBar = styled.div`
@@ -32,10 +46,12 @@ export const ActionsBar = styled.div`
 
 export const Buttons = styled.button`
   font-size: 12px;
-  font-weight: bold:
+  font-weight: bold;
   color: #fff;
   padding: 8px 12px;
   border: none;
   cursor: pointer;
-  background-color: #2F3640;
+  background-color: #2f3640;
+  border-radius: 8px;
+  margin-right: 8px;
 `

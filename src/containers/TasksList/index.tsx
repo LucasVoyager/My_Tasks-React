@@ -1,7 +1,8 @@
 import Task from '../../components/Task'
+import { ContainerTL } from './styles'
 
 const TasksList = () => (
-  <main>
+  <ContainerTL>
     <p>2 tarefas marcadas como: &quot;categoria&ldquo; e &quot;termo&ldquo;</p>
     <ul>
       <li>
@@ -20,7 +21,7 @@ const TasksList = () => (
         <Task />
       </li>
     </ul>
-  </main>
+  </ContainerTL>
 )
 
 export default TasksList

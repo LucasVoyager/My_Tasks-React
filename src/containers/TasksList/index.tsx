@@ -1,25 +1,26 @@
 import Task from '../../components/Task'
 import { ContainerTL } from './styles'
+import * as enums from '../../utils/enums/TasksE'
 
 const tasks = [
   {
     title: 'Estudar Typescript',
     description: 'Verificar o fork feito de aulas typescript da github',
-    priority: 'importante',
-    status: 'Pendente'
+    priority: enums.Priority.IMPORTANTE,
+    status: enums.Status.PENDENTE
   },
   {
     title: 'Estudar Python',
     description:
       'Continuar curso na Udemy para aprimorar conhecimento de Python',
-    priority: 'importante',
-    status: 'Pendente'
+    priority: enums.Priority.IMPORTANTE,
+    status: enums.Status.PENDENTE
   },
   {
     title: 'Treinar academia',
     description: 'academia todos os dias da semana e basquete aos sabados',
-    priority: 'importante',
-    status: 'Pendente'
+    priority: enums.Priority.URGENTE,
+    status: enums.Status.CONCLUIDA
   }
 ]
 

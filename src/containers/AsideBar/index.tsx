@@ -3,6 +3,7 @@ import CardFilter from '../../components/CardFilter'
 import * as S from './styles'
 import { RootReducer } from '../../store'
 import { changeTerme } from '../../store/reducers/filter'
+import * as enums from '../../utils/enums/TasksE'
 
 const AsideBar = () => {
   const dispatch = useDispatch()
@@ -17,12 +18,32 @@ const AsideBar = () => {
           onChange={(event) => dispatch(changeTerme(event.target.value))}
         />
         <S.Filters>
-          <CardFilter subtitle="pendentes" counter={1} />
-          <CardFilter subtitle="concluídas" counter={7} />
-          <CardFilter subtitle="urgentes" counter={2} />
-          <CardFilter subtitle="importantes" counter={1} />
-          <CardFilter subtitle="normal" counter={2} />
-          <CardFilter active subtitle="todas" counter={12} />
+          <CardFilter
+            valuePS={enums.Status.PENDENTE}
+            criteria="status"
+            subtitle="pendentes"
+          />
+          <CardFilter
+            valuePS={enums.Status.CONCLUIDA}
+            criteria="status"
+            subtitle="concluídas"
+          />
+          <CardFilter
+            valuePS={enums.Priority.URGENTE}
+            criteria="prioridade"
+            subtitle="urgentes"
+          />
+          <CardFilter
+            valuePS={enums.Priority.IMPORTANTE}
+            criteria="prioridade"
+            subtitle="importantes"
+          />
+          <CardFilter
+            valuePS={enums.Priority.NORMAL}
+            criteria="prioridade"
+            subtitle="normal"
+          />
+          <CardFilter criteria="todas" subtitle="todas" />
         </S.Filters>
       </div>
     </S.Aside>

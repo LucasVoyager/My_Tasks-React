@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux'
 import * as S from './styles'
 import { remove, edit, changeStatus } from '../../store/reducers/tasks'
 import TaskClass from '../../models/Task'
-import { ButtonSaved } from '../../styles'
+import { ButtonSaved, Buttons } from '../../styles'
 
 import * as enums from '../../utils/enums/TasksE'
 
@@ -44,7 +44,10 @@ const Task = ({
           checked={status === enums.Status.CONCLUIDA}
           onChange={changeStatusTask}
         />
-        <S.Title>{title}</S.Title>
+        <S.Title>
+          {isEdit && <em>Editando: </em>}
+          {title}
+        </S.Title>
       </label>
       <S.Tag parameter="priority" priority={priority}>
         {priority}
@@ -82,7 +85,7 @@ const Task = ({
           </>
         ) : (
           <>
-            <S.Buttons onClick={() => setEdit(true)}>Editar</S.Buttons>
+            <Buttons onClick={() => setEdit(true)}>Editar</Buttons>
             <S.ButtonRemoved onClick={() => dispatch(remove(id))}>
               Remover
             </S.ButtonRemoved>

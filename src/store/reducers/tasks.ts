@@ -46,7 +46,7 @@ const taksSlice = createSlice({
         state.itens[indexTask] = action.payload
       }
     },
-    register: (state, action: PayloadAction<Task>) => {
+    register: (state, action: PayloadAction<Omit<Task, 'id'>>) => {
       const taskIsExist = state.itens.find(
         (task) =>
           task.title.toLowerCase() === action.payload.title.toLocaleLowerCase()
@@ -55,7 +55,13 @@ const taksSlice = createSlice({
       if (taskIsExist) {
         alert('já existe uma tarefa com esse nome')
       } else {
-        state.itens.push(action.payload)
+        const lastTask = state.itens[state.itens.length - 1]
+
+        const newTask = {
+          ...action.payload,
+          id: lastTask ? lastTask.id + 1 : 1
+        }
+        state.itens.push(newTask)
       }
     },
     changeStatus: (

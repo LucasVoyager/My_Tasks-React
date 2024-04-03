@@ -4,7 +4,7 @@ import TasksList from '../../containers/TasksList'
 
 const Home = () => (
   <>
-    <AsideBar />
+    <AsideBar showFilters />
     <TasksList />
     <ButtonAdd />
   </>

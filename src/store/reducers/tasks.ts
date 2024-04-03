@@ -57,9 +57,21 @@ const taksSlice = createSlice({
       } else {
         state.itens.push(action.payload)
       }
+    },
+    changeStatus: (
+      state,
+      action: PayloadAction<{ id: number; finally: boolean }>
+    ) => {
+      const indexTask = state.itens.findIndex((t) => t.id === action.payload.id)
+
+      if (indexTask >= 0) {
+        state.itens[indexTask].status = action.payload.finally
+          ? enums.Status.CONCLUIDA
+          : enums.Status.PENDENTE
+      }
     }
   }
 })
 
-export const { remove, edit, register } = taksSlice.actions
+export const { remove, edit, register, changeStatus } = taksSlice.actions
 export default taksSlice.reducer

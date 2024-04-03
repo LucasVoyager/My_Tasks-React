@@ -45,9 +45,21 @@ const taksSlice = createSlice({
       if (indexTask >= 0) {
         state.itens[indexTask] = action.payload
       }
+    },
+    register: (state, action: PayloadAction<Task>) => {
+      const taskIsExist = state.itens.find(
+        (task) =>
+          task.title.toLowerCase() === action.payload.title.toLocaleLowerCase()
+      )
+
+      if (taskIsExist) {
+        alert('já existe uma tarefa com esse nome')
+      } else {
+        state.itens.push(action.payload)
+      }
     }
   }
 })
 
-export const { remove, edit } = taksSlice.actions
+export const { remove, edit, register } = taksSlice.actions
 export default taksSlice.reducer

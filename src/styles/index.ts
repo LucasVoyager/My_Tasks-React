@@ -46,7 +46,7 @@ export const Buttons = styled.button`
   padding: 8px 12px;
   border: none;
   cursor: pointer;
-  background-color: #2f3640;
+  background-color: ${variables.darkBlue};
   border-radius: 8px;
   margin-right: 8px;
 `
